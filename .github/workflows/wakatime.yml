@@ -1,0 +1,22 @@
+name: WakaTime coding stats update
+
+on:
+  schedule:
+    - cron: '0 7 * * *' # every day at 07:00 UTC
+  workflow_dispatch:
+
+jobs:
+  update-wakatime:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Update WakaTime stats
+        run: |
+          echo "TODO: use WakaTime data and update profile content"

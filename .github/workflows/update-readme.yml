@@ -1,0 +1,22 @@
+name: Scheduled README updates
+
+on:
+  schedule:
+    - cron: '0 8 * * 0' # every Sunday at 08:00 UTC
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run README update script
+        run: |
+          echo "TODO: implement README generation or update script"
